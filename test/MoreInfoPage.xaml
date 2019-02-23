@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="test.MoreInfoPage">
+    <ContentPage.Content>
+         <StackLayout
+            Margin="20"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <forms:AnimationView
+                x:Name="MonsterImage"
+                Animation="{Binding Image}"
+                Loop="true"
+                AutoPlay="true"
+                HeightRequest="300"
+                WidthRequest="300"
+            
+                />
+            <Label
+                x:Name="MonsterNameLabel"
+                Text="{Binding MonsterName}"
+                HorizontalTextAlignment="Center"
+                FontSize="Large"/>
+            <Label
+                x:Name="MonsterDifficulty"
+                Text="{Binding Difficulty, StringFormat='Difficulty: {0}'}"
+                HorizontalTextAlignment="Center"
+                FontSize="Medium"
+                TextColor="Gray"/>
+            <Label
+                x:Name="MonsterDescription"
+                Text="{Binding Description, StringFormat='Description: {0}'}"
+                HorizontalTextAlignment="Center"
+                FontSize="Small"
+                TextColor="Silver"/>
+             <Label
+                x:Name="MonsterHealth"
+                Text="{Binding Health,StringFormat='Health: {0}'}"
+                HorizontalTextAlignment="Center"
+                FontSize="Small"
+                TextColor="Silver"
+                />
+            <Button
+                x:Name="FightButton"
+                Text="FIGHT!!"
+                FontSize="Large"
+                BackgroundColor="#5cd65c"
+                TextColor="White"
+                Clicked="Fight_Clicked"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

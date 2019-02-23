@@ -1,0 +1,38 @@
+{"Monsterdata":[
+  {
+    "MonsterName": "Phone Monster",
+    "description": "Will ask if you have any games on your phone and then play them all.",
+    "health": 100,
+    "image": "phone.json",
+    "difficulty": 1
+  },
+  {
+    "MonsterName": "Love Monster",
+    "description": "Will try to give you love.",
+    "health": 400,
+    "image": "love.json",
+    "difficulty": 4
+  },
+  {
+    "MonsterName": "Fraken Monster",
+    "description": "Made by Mary Shelley.",
+    "health": 800,
+    "image": "fraken.json",
+    "difficulty": 8
+  },
+  {
+    "MonsterName": "Bat Monster",
+    "description": "Like Batman but Monster.",
+    "health": 200,
+    "image": "bat.json",
+    "difficulty": 2
+  },
+  {
+    "MonsterName": "Cry Monster",
+    "description": "This is Love Monster. You just didn't accept its love.",
+    "health": 600,
+    "image": "cry.json",
+    "difficulty": 6
+  }
+]
+}

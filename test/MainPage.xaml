@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:test"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="test.MainPage">
+    <StackLayout>
+        <Image
+            x:Name="logo"
+            
+            Source="logo.png"
+            />
+        <ListView
+            x:Name="WeatherListView"
+            RowHeight="90"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem
+                                Text="More"
+                                Clicked="Handle_Clicked"
+                                CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                        <ViewCell.View>
+                            <Grid
+                                x:Name="ListViewGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                        Width="90" />
+                                    <ColumnDefinition
+                                        Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                        Height="*" />
+                                    <RowDefinition
+                                        Height="*" />
+                                    <RowDefinition
+                                        Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label
+                                    
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    FontSize="Large"
+                                    Text="{Binding MonsterName}" />
+                                <Label
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    FontSize="Medium"
+                                    MaxLines="1"
+                                    
+                                    Text="{Binding Description, StringFormat='Description: {0}'}" />
+                                <Label
+                                    Grid.Column="1"
+                                    Grid.Row="2"
+                                    FontSize="Small"
+                                    
+                                    Text="{Binding Difficulty, StringFormat='Difficulty: {0}'}" />
+                                <forms:AnimationView
+                                    x:Name="MonsterImage"
+                                    Animation="{Binding Image}"
+                                    Loop="true"
+                                    AutoPlay="true"
+                                    HeightRequest="50"
+                                    WidthRequest="50"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.RowSpan="3"/>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

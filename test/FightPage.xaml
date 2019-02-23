@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="test.FightPage">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="20"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label
+                x:Name="LostLabel"
+                HorizontalTextAlignment="Center"
+                IsVisible="false"
+                Text="YOU LOST!!"
+                TextColor="#ff3333"
+                FontSize="Large"/>
+            <Label
+                x:Name="WonLabel"
+                HorizontalTextAlignment="Center"
+                IsVisible="false"
+                Text="YOU WON!!"
+                TextColor="#5cd65c"
+                FontSize="Large"/>
+            <Button
+                x:Name="ReturnButton"
+                Text="Return to Monsters"
+                BackgroundColor="#3399ff"
+                TextColor="White"
+                Clicked="Return_Clicked"
+                IsVisible="false"/>
+            
+            <StackLayout Orientation="Horizontal">
+            <Label
+                Text="{Binding MonsterName,StringFormat='{0} Health'}"
+                FontSize="Large"
+                />
+                <Label
+                    x:Name="MonsterHealthLabel"
+                    TextColor="Gray"
+                    FontSize="Small"/>
+             </StackLayout>   
+            <ProgressBar
+                x:Name="MonsterHealth"
+                Progress="1"
+                HeightRequest="20"
+                ProgressColor="#5cd65c"/>
+            <forms:AnimationView
+                x:Name="MonsterImage"
+                Animation="{Binding Image}"
+                Loop="true"
+                AutoPlay="true"
+                HeightRequest="300"
+                WidthRequest="300"
+                />
+            <StackLayout Orientation="Horizontal">
+            <Label
+                Text="Your Health"
+                FontSize="Large"
+                />
+                <Label
+                    x:Name="UserHealthLabel"
+                    TextColor="Gray"
+                    FontSize="Small"/>
+             </StackLayout> 
+            <ProgressBar
+                x:Name="UserHealth"
+                Progress="1"
+                ProgressColor="#0099ff"/> 
+            <Button
+                x:Name="BattleButton"
+                Text="Battle!"
+                BackgroundColor="#ff3333"
+                TextColor="White"
+                Clicked="Battle_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
